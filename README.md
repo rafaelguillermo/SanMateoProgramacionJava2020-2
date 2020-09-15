@@ -9,3 +9,4 @@ Alumnos:
 Pedro Luis Moncada Vidales
 Luz Deilly Daza
 Luis Villamizar
+John Galindo
