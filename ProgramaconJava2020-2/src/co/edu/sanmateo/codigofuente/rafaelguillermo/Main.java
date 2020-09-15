@@ -10,5 +10,7 @@ package co.edu.sanmateo.codigofuente.rafaelguillermo;
  * @author Rafael Guillermo Blanco Banquez <rafaelg.blancob@gmail.com>
  */
 public class Main {
-    
+    public static void main(String[] args) {
+        System.out.println("Hola Mundo");
+    }
 }
