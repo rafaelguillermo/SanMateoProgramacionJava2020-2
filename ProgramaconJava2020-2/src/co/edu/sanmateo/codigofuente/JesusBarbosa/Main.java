@@ -10,5 +10,7 @@ package co.edu.sanmateo.codigofuente.JesusBarbosa;
  * @author LuckRotz
  */
 public class Main {
-    
+    public static void main(String[] args) {
+        System.out.println("Hola Jesús Barbosa");
+    }
 }
