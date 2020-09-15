@@ -6,3 +6,4 @@ Materia: ELECTIVA III (TECNOLOGO) 01N30(FUNDAMENTOS DE PROGRAMACION EN JAVA)
 PROFESOR: Rafael Guillermo Blanco Banquéz.
 
 Alumnos:
+Pedro Luis Moncada Vidales
