@@ -11,6 +11,8 @@ package co.edu.sanmateo.codigofuente.lddaza;
  */
 public class Main {
    public static void main(String[] args) {
-        System.out.println("Hola Mundo Luz DAZA");
+       
+       String name="Luz Daza";
+        System.out.println("Mi nombre es"+ name);
     }
 }
