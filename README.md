@@ -12,3 +12,4 @@ Luis Villamizar
 John Galindo
 Alain Escamilla
 Jhon Rangel
+Giovanny Patarroyo
