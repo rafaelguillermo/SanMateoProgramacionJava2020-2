@@ -13,3 +13,4 @@ John Galindo
 Alain Escamilla
 Jhon Rangel
 Giovanny Patarroyo
+    Yerson Romero
