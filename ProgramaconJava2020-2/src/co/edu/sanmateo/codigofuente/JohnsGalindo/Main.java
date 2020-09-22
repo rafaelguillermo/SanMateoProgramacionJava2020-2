@@ -20,7 +20,7 @@ public class Main {
        
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>();
-        Universidad = new universidad = new Universidad();
+        Universidad universidad = new Universidad();
         
         System.out.println("Bienvenido a la Universidad San Mateo");
         System.out.println("---------Menu-------");
