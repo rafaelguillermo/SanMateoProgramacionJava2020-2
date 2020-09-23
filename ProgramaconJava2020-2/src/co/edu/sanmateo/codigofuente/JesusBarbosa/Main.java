@@ -25,9 +25,9 @@ public class Main {
                 System.out.println("Saliendo....");
                 System.exit(0);
             } else if (opcion == 1) {
-                Estudiante estu = universidad.crearEstudiante();
-                listaEstudiante.add(estu);
-                System.out.println("El estudiante: " + estu.nombreCompleto + " ha sido ingresado a la universidad");
+                Estudiante estudiantes = universidad.crearEstudiante();
+                listaEstudiante.add(estudiantes);
+                System.out.println("El estudiante: " + estudiantes.nombreCompleto + " ha sido ingresado a la universidad");
             }
         }
 
