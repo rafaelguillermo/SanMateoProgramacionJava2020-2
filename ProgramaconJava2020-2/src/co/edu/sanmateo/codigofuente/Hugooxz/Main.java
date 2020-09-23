@@ -8,7 +8,7 @@ public class Main {
         
      public static void main(String[] args) {
        
-         JOptionPane.showMessageDialog(null, "activo mi carta trampa..");{
+         JOptionPane.showMessageDialog(null, "activo mi carta trampa...");{
          
      }
      }
