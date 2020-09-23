@@ -10,7 +10,7 @@ package co.edu.sanmateo.codigofuente.Gersoncruz09.modelo;
  * @author _Asap
  */
 public class Estudiante {
-    
+
     public String nombreCompleto;
     public String cedula;
 
@@ -18,6 +18,5 @@ public class Estudiante {
         this.nombreCompleto = nombreCompleto;
         this.cedula = cedula;
     }
-    
-    
+
 }
