@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.sanmateo.codigofuente.IngMauriciop;
+package co.edu.sanmateo.codigofuente.IngMauriciop.modelo;
 
 /**
  *
@@ -14,14 +14,11 @@ public class Estudiante {
     public String nombreCompleto;
     public String cedula;
 
-    public Estudiante() {
-    }
-
     public Estudiante(String nombreCompleto, String cedula) {
         this.nombreCompleto = nombreCompleto;
         this.cedula = cedula;
     }
     
-    
-    
 }
+    
+
