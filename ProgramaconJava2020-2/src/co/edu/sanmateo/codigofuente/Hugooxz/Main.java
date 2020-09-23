@@ -17,7 +17,7 @@ public class Main {
         Universidad universidad = new Universidad();
 
         while (true) {
-            System.out.println("Bienvenido a la universidad San Mateo");
+            System.out.println("Bienvenido a la universidad San Mateo.");
             System.out.println("-------- Menu ------------");
             System.out.println("1. Registrar Estudiante");
             System.out.println("0. Salir");
