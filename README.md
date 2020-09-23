@@ -14,3 +14,5 @@ Alain Escamilla
 Jhon Rangel
 Giovanny Patarroyo
     Yerson Romero
+Angi Natalia Silva
+Fabian Galindo
