@@ -16,3 +16,4 @@ Giovanny Patarroyo
 Yerson Romero
 Angi Natalia Silva
 Fabian Galindo
+Luis Ruge
