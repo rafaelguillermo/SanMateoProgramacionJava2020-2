@@ -1,21 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package co.edu.sanmateo.codigofuente.afcastro1995;
 
-/**
- *
- * @author felipe
- */
+import co.edu.sanmateo.codigofuente.afcastro1995.modelo.Estudiante;
+import co.edu.sanmateo.codigofuente.afcastro1995.operaciones.Universidad;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String[] args) {
-       System.out.println("Bienvenido Andres Felipe Castro Santos");
+      Scanner entrada = new Scanner(System.in);
+        List<Estudiante> listaEstudiante = new ArrayList<>();
+        Universidad universidad = new Universidad();
+
+        while (true) {
+            System.out.println("Bienvenido a la universidad San Mateo");
+            System.out.println("-------- Menu ------------");
+            System.out.println("1. Registrar Estudiante");
+            System.out.println("0. Salir");
+            int opcion = entrada.nextInt();
+            if (opcion == 0) {
+                System.out.println("Saliendo....");
+                System.exit(0);
+            } else if (opcion == 1) {
+                Estudiante estudiante = universidad.crearEstudiante();
+                listaEstudiante.add(estudiante);
+                System.out.println("El estudiante: " + estudiante.nombreCompleto + " ha sido ingresado a la universidad");
+            }
+        }
     }
     
 }
