@@ -1,7 +1,7 @@
 package co.edu.sanmateo.codigofuente.josepasr;
 
-import co.edu.sanmateo.codigofuente.rafaelguillermo.modelo.Estudiante;
-import co.edu.sanmateo.codigofuente.rafaelguillermo.operaciones.Universidad;
+import co.edu.sanmateo.codigofuente.josepasr.modelo.Estudiante;
+import co.edu.sanmateo.codigofuente.josepasr.operaciones.Universidad;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
