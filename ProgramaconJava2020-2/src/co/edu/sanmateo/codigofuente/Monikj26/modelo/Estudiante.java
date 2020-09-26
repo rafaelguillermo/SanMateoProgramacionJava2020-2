@@ -1,4 +1,6 @@
-package co.edu.sanmateo.codigofuente.LuisRuge.modelo;
+
+package co.edu.sanmateo.codigofuente.Monikj26.modelo;
+
 
 public class Estudiante {
     
@@ -9,5 +11,4 @@ public class Estudiante {
         this.nombreCompleto = nombreCompleto;
         this.cedula = cedula;
     }
-    
 }

@@ -22,6 +22,7 @@ public class Main {
         List<Estudiante> listaEstudiante = new ArrayList<>();
         Universidad universidad = new Universidad();
         
+        while (true) {
         System.out.println("Bienvenido a la Universidad San Mateo");
         System.out.println("---------Menu-------");
           System.out.println("1.Registrar Estudiante");
@@ -35,7 +36,7 @@ public class Main {
                     listaEstudiante.add(estu);
                     System.out.print("El estudiante: "+estu.nombreCompleto+" Ha sido registrado.");
                 }
-                
+        }
     }
     
 }

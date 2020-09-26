@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.sanmateo.codigofuente.pedromoncada26.modelo;
+package co.edu.sanmateo.codigofuente.extrandres.modelo;
 
 /**
  *
- * @author monca
+ * @author lerman
  */
 public class Estudiante {
+
     public String nombreCompleto;
     public String cedula;
 
@@ -18,5 +19,4 @@ public class Estudiante {
         this.cedula = cedula;
     }
 
-   
 }

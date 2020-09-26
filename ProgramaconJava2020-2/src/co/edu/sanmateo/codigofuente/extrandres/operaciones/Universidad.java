@@ -1,15 +1,20 @@
-package co.edu.sanmateo.codigofuente.LuisRuge.operaciones;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.edu.sanmateo.codigofuente.extrandres.operaciones;
 
-import co.edu.sanmateo.codigofuente.LuisRuge.modelo.Estudiante;
+import co.edu.sanmateo.codigofuente.extrandres.modelo.Estudiante;
 import java.util.Scanner;
 
+/**
+ *
+ * @author lerman
+ */
 public class Universidad {
-
-    public Universidad() {
-    }
     
-    
-    public Estudiante crearEstudiante(){
+     public Estudiante crearEstudiante(){
         
         Scanner entrada = new Scanner(System.in);
         System.out.println("--------------------------------");
@@ -25,4 +30,5 @@ public class Universidad {
         
         return estudiante;
     }
+    
 }
