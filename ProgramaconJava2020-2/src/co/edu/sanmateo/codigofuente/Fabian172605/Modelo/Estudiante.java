@@ -7,8 +7,17 @@ package co.edu.sanmateo.codigofuente.Fabian172605.Modelo;
 
 /**
  *
- * @author Fabian
+ * @author John
  */
 public class Estudiante {
+    public String nombreCompleto;
+    public String cedula;
+    
+    //metodo Contructor
+   
+    public Estudiante(String nombreCompleto, String cedula) {
+        this.nombreCompleto = nombreCompleto;
+        this.cedula = cedula;
+    }
     
 }
