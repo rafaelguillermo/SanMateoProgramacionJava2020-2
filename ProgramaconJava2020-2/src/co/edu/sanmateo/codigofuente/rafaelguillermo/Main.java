@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author Rafael Guillermo Blanco Banquez <rafaelg.blancob@gmail.com>
- */
 public class Main {
 
     public static void main(String[] args) {

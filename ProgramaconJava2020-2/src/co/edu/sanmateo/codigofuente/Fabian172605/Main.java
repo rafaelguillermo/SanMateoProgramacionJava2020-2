@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.sanmateo.codigofuente.extrandres;
+package co.edu.sanmateo.codigofuente.Fabian172605;
 
 /**
  *
- * @author lerman
+ * @author Fabian
  */
-public class Estudiante {
+public class Main {
     
 }

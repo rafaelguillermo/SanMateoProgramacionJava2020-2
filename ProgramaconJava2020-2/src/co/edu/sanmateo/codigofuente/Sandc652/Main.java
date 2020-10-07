@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.sanmateo.codigofuente.IngMauriciop;
+package co.edu.sanmateo.codigofuente.Sandc652;
 
-
-public class Proyecto { 
+/**
+ *
+ * @author Lenovo
+ */
+public class Main {
     
 }
