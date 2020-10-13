@@ -16,23 +16,25 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
- public static void main (String[] args){
-     
-     Scanner entrada = new Scanner(System.in);
-     List<Estudiante> listaEstudiante = new ArrayList<>(); //Creación de lista
-     Universidad universidad = new Universidad();
-     
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+        List<Estudiante> listaEstudiante = new ArrayList<>(); //Creación de lista
+        Universidad universidad = new Universidad();
+
         while (true) {
             System.out.println("|--------------------------------------------------|");
             System.out.println("|Bienvenidos a la Fundación Universitaria San Mateo|");
             System.out.println("|---------------------- Menú ----------------------|");
             System.out.println("|1. Registrar Estudiante                           |");
             System.out.println("|2. Listar Estudiantes                             |");
+            System.out.println("|3. Buscar Estudiante en la lista                  |");
             System.out.println("|0. Salir                                          |");
             System.out.println("|--------------------------------------------------|");
-            
+
             int opcion = entrada.nextInt();
-            
+
             if (opcion == 0) {
                 System.out.println("Saliendo...");
                 System.exit(0);
@@ -40,17 +42,23 @@ public class Main {
                 Estudiante estu = universidad.crearEstudiante();
                 listaEstudiante.add(estu); //El .add es para adicionar un estudiante a la lista.
                 System.out.println("El estudiante " + estu.nombreCompleto + " ha sido ingresado a la iniversidad");
-            } else if (opcion == 2){
+            } else if (opcion == 2) {
                 //Un ciclo for realiza tres operaciones fundamentales de la siguiente manera:
                 //1. Inicialización.
                 //2. Pregunta.
-                //3. Incremnta o Disminuye.
-                System.out.println("ESTUDIANTES A MOSTRAR: "+listaEstudiante.size()); //El .size es para conocer el tamaño de la lista.
+                //3. Incrementa o Disminuye.
+                System.out.println("ESTUDIANTES A MOSTRAR: " + listaEstudiante.size()); //El .size es para conocer el tamaño de la lista.
                 System.out.println("DOCUMENTO      NOMBRE COMPLETO");
                 System.out.println("|--------------------------------------------------|");
-                for (int indice=0; indice<listaEstudiante.size(); indice++){
+                for (int indice = 0; indice < listaEstudiante.size(); indice++) {
                     Estudiante estudiante = listaEstudiante.get(indice); //El .get es para mostrar la información de un estudiante.
-                    System.out.println(estudiante.cedula+"      "+estudiante.nombreCompleto);
+                    System.out.println(estudiante.cedula + "      " + estudiante.nombreCompleto);
+                }
+            } else if (opcion == 3) {
+                for (int indice = 0; indice < listaEstudiante.size(); indice++) {
+                    if (listaEstudiante.get(indice).equals(listaEstudiante)){
+                      System.out.println("El estudiante" + listaEstudiante +"fue encontrado");  
+                    }
                 }
             }
         }
