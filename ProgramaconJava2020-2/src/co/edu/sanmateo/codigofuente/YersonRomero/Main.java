@@ -29,7 +29,7 @@ public class Main {
             System.out.println("|---------------------- Menú ----------------------|");
             System.out.println("|1. Registrar Estudiante                           |");
             System.out.println("|2. Listar Estudiantes                             |");
-            System.out.println("|3. Buscar Estudiante en la lista                  |");
+            System.out.println("|3. Buscar Estudiante en la Lista                  |");
             System.out.println("|0. Salir                                          |");
             System.out.println("|--------------------------------------------------|");
 
@@ -55,10 +55,15 @@ public class Main {
                     System.out.println(estudiante.cedula + "      " + estudiante.nombreCompleto);
                 }
             } else if (opcion == 3) {
+                System.out.println("Por favor ingrese el número de identificación a buscar");
+                String identificacion;
+                identificacion = entrada.next();
                 for (int indice = 0; indice < listaEstudiante.size(); indice++) {
-                    if (listaEstudiante.get(indice).equals(listaEstudiante)){
-                      System.out.println("El estudiante" + listaEstudiante +"fue encontrado");  
+                    Estudiante estudiante = listaEstudiante.get(indice); 
+                    if (estudiante.cedula.equals(identificacion)){
+                     System.out.println("Estudiante encontrado   "+ estudiante.nombreCompleto);   
                     }
+                     System.out.println("Estudiante no encontrado   "+ estudiante.nombreCompleto);
                 }
             }
         }
