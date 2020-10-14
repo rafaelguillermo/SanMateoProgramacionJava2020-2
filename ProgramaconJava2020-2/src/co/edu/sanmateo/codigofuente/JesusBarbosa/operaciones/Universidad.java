@@ -16,10 +16,10 @@ public class Universidad {
         System.out.println("*****Ingresando un nuevo estudiante*****");
         System.out.println("*****Nombre completo del estudiante*****");
         String nombre = entrada.nextLine();
-        
+        System.out.println("--------------------------------");
         System.out.println("*****Cedula del estudiante*****");
         String cedula = entrada.nextLine();
-        
+        System.out.println("--------------------------------");
         Estudiante estudiante = new Estudiante(nombre, cedula);
         System.out.println("--------------------------------");
         
