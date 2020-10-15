@@ -10,10 +10,7 @@ package co.edu.sanmateo.codigofuente.GiovannyAndres.operaciones;
 import co.edu.sanmateo.codigofuente.GiovannyAndres.modelo.Estudiante;
 import java.util.Scanner;
 
-
 public class Universidad {
-
-    private String nombre;
 
     public Universidad() {
     }
