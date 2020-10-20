@@ -8,7 +8,7 @@ public class Universidad {
     public Estudiante crearEstudiante(){
         
     Scanner entrada = new Scanner(System.in);
-    System.out.println("------------------------------");
+    System.out.println("|--------------------------------------------------|");
     System.out.println("Ingresando un nuevo estudiante");
     System.out.println("Nombre completo del estudiante");
     String nombre = entrada.nextLine();
@@ -17,7 +17,7 @@ public class Universidad {
     String cedula = entrada.nextLine();
     
     Estudiante estudiante = new Estudiante(nombre, cedula);
-    System.out.println("------------------------------");
+    System.out.println("|--------------------------------------------------|");
     
     return estudiante; 
     }

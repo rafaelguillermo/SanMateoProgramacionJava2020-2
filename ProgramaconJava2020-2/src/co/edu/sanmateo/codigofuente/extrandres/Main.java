@@ -24,10 +24,18 @@ public class Main {
         Universidad universidad = new Universidad();
 
         while (true) {
-            System.out.println("Bienvenido a la universidad San Mateo");
-            System.out.println("-------- Menu ------------");
-            System.out.println("1. Registrar Estudiante");
+            //MENU
+            System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+            System.out.println(" BIENVENIDO A LA UNIVERSIDAD SAN MATEO");
+            System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+            System.out.println("                  MENU");
+            System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+            System.out.println("1. REGISTRAR ESTUDIANTE");
+            System.out.println("2. LISTA ESTUDIANTES");
+            System.out.println("3. BUSCAR ESTUDIANTE");
             System.out.println("0. Salir");
+            System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+            System.out.println("             INGRESAR OPCION");
             int opcion = entrada.nextInt();
             if (opcion == 0) {
                 System.out.println("Saliendo....");
@@ -35,8 +43,38 @@ public class Main {
             } else if (opcion == 1) {
                 Estudiante estu = universidad.crearEstudiante();
                 listaEstudiante.add(estu);
-                System.out.println("El estudiante: " + estu.nombreCompleto + " ha sido ingresado a la universidad");
+                System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+                System.out.println("EL ESTUDIANTE:  " + estu.nombreCompleto + " ESTA REGISTRADO");
+
+            } else if (opcion == 2) {
+
+                System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+                System.out.println("          LISTA DE ESTUDIANTES ");
+                System.out.println("    NUMERO DE ESTUDIANTES REGISTRADOS " + listaEstudiante.size());
+                System.out.println();
+
+                for (int i = 0; i < listaEstudiante.size(); i++) {
+                    Estudiante estudiante = listaEstudiante.get(i);
+                    System.out.println("     DOCUMENTO          NOMBRE COMPLETO");
+                    System.out.println("        " + estudiante.cedula + "                 " + estudiante.nombreCompleto);
+                }
+
+            } else if (opcion == 3) {
+                System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+                System.out.println("    INGRESAR DOCUMENTO DEL ESTUDIANTE");
+                String identificacion = entrada.next();
+
+                for (int i = 0; i < listaEstudiante.size(); i++) {
+
+                    Estudiante estudiante = listaEstudiante.get(i);
+                    if (estudiante.cedula.equals(identificacion)) {
+                        System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+                        System.out.println("EL DOCUMENTO PERTENECE AL ESTUDIANTE: " + estudiante.nombreCompleto);
+                        
+                    }
+                }
             }
+
         }
 
     }

@@ -16,17 +16,25 @@ public class Universidad {
     
      public Estudiante crearEstudiante(){
         
+        // instanciar clase scanner
         Scanner entrada = new Scanner(System.in);
-        System.out.println("--------------------------------");
-        System.out.println("Ingresando un nuevo estudiante");
-        System.out.println("Nombre completo del estudiante");
+        
+        
+        System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+        System.out.println("          INGRESANDO ESTUDIANTE");
+        System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+        System.out.println("      NOMBRE COMPLETO DEL ESTUDIANTE");
+        System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
         String nombre = entrada.nextLine();
         
-        System.out.println("Cedula del estudiante");
+        
+        System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
+        System.out.println("          CEDULA DEL ESTUDIANTE");
+        System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
         String cedula = entrada.nextLine();
         
         Estudiante estudiante = new Estudiante(nombre, cedula);
-        System.out.println("--------------------------------");
+        
         
         return estudiante;
     }

@@ -1,7 +1,11 @@
-package co.edu.sanmateo.codigofuente.JesusBarbosa.operaciones;
-
-import co.edu.sanmateo.codigofuente.JesusBarbosa.modelo.Estudiante;
+package co.edu.sanmateo.codigofuente.dmb2020.operaciones;
+/**
+ *
+ * @author dbola
+ */
+import co.edu.sanmateo.codigofuente.dmb2020.modelo.Estudiante;
 import java.util.Scanner;
+
 
 public class Universidad {
 
@@ -13,17 +17,18 @@ public class Universidad {
         
         Scanner entrada = new Scanner(System.in);
         System.out.println("--------------------------------");
-        System.out.println("*****Ingresando un nuevo estudiante*****");
-        System.out.println("*****Nombre completo del estudiante*****");
+        System.out.println("Ingresando un nuevo estudiante");
+        System.out.println("Nombre completo del estudiante");
         String nombre = entrada.nextLine();
-        System.out.println("--------------------------------");
-        System.out.println("*****Cedula del estudiante*****");
+        
+        System.out.println("Cedula del estudiante");
         String cedula = entrada.nextLine();
-        System.out.println("--------------------------------");
+        
         Estudiante estudiante = new Estudiante(nombre, cedula);
         System.out.println("--------------------------------");
         
         return estudiante;
     }
 }
+
 
