@@ -17,7 +17,7 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>();
         Universidad universidad = new Universidad();
-
+      
         while (true) {
 
             System.out.println("Bienvenido a la Universidad San Juan");
@@ -25,6 +25,7 @@ public class Main {
             System.out.println("1 Regstrar un estudiante");
             System.out.println("2 Lista de estudiantes");
             System.out.println("3 Buscar un estudiante");
+            System.out.println("4 Guardar datos de los estudiantes");
             System.out.println("0 para salir del menu");
             int opcion = entrada.nextInt();
 
@@ -37,7 +38,7 @@ public class Main {
                 System.out.println("Se ha creado el estudiante " + nuevo.nombrecompleto + " correctamente");
                 System.out.println("");
             } else if (opcion == 2) {
-                System.out.println("\n Cantidad de Estudiantes Regitrados : " + listaEstudiante.size());
+                System.out.println("\nCantidad de Estudiantes Regitrados : " + listaEstudiante.size());
                 System.out.println("Documento          Nombre");
                 System.out.println("----------------------------");
                 for (int i = 0; i < listaEstudiante.size(); i++) {
@@ -46,31 +47,25 @@ public class Main {
                 }
                 System.out.println("----------------------------");
             } else if (opcion == 3) {
-                int opc;
-                opc=0;
-                do {
-                    System.out.println("Digite la cedula del estudiante:");
-                    String busqueda = entrada.nextLine();
-                    for (int i = 0; i < listaEstudiante.size(); i++) {
-                        Estudiante estudiante = listaEstudiante.get(i);
-                        String aux = estudiante.cedula;
-
-                        if (aux == busqueda) {
-                            System.out.println("los datos del estudiante son:");
-                            System.out.println("documento" + estudiante.cedula + estudiante.nombrecompleto);
-                        }else{
-                            System.out.println("No se encontro ningun estudiante con ese documento");
-                        System.out.println("Deseaa hacer otra busqueda? ");
-                        System.out.println("1 SI");
-                        System.out.println("2 NO");
-                        opc = entrada.nextInt();
-                        }       
+                System.out.println("Digite la cedula del estudiante:");
+                String busqueda = entrada.nextLine();
+                
+                for (int i = 0; i < listaEstudiante.size(); i++) {
+                    Estudiante estudiante = listaEstudiante.get(i);
+                    String aux = estudiante.cedula;
+                    if (aux == busqueda) {
+                        System.out.println("los datos del estudiante son:");
+                        System.out.println("documento" + estudiante.cedula + estudiante.nombrecompleto);
+                        System.out.println("----------------------------");
                     }
-
-                } while (opc == 2);
+                }
+                System.out.println("no se encontró el estudiante");
+                System.out.println("----------------------------");
+            } else if (opcion == 4) {
+                System.out.println("aqui habrá un metodo para guardar");
+                System.out.println("----------------------------------");
 
             }
         }
     }
-
 }
