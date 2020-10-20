@@ -2,6 +2,9 @@ package co.edu.sanmateo.codigofuente.rafaelguillermo;
 
 import co.edu.sanmateo.codigofuente.rafaelguillermo.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.rafaelguillermo.operaciones.Universidad;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,9 +14,13 @@ import java.util.Scanner;
  * @author Rafael Guillermo Blanco Banquez <rafaelg.blancob@gmail.com>
  */
 public class Main {
-
-    public static void main(String[] args) {
-
+    
+    public Main() {
+        System.out.println("Construyendo la clase desde una instanacia");
+    }
+    
+    public void ejecutarMenu() throws IOException{
+        
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>();
         
@@ -26,6 +33,7 @@ public class Main {
             System.out.println("1. Registrar Estudiante");
             System.out.println("2. Listar Estudiantes");
             System.out.println("3. Buscar Estudiante en la lista");
+            System.out.println("4. Guardar informacion de los estudiantes");
             System.out.println("0. Salir");
             
             int opcion = entrada.nextInt();
@@ -64,8 +72,27 @@ public class Main {
                     }
                     //System.out.println(estudiante.cedula+"      "+estudiante.nombreCompleto);
                 }
+            }else if(opcion == 4){
+                ///System.out.println("");
+                FileWriter fileWriter = new FileWriter("F:\\r\\software\\docs\\j\\cursos\\Java SE 8 Programming\\Java SE 8 Programming\\estudiantes2.txt", false);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                
+                for(int indice=0; indice < listaEstudiante.size(); indice ++ ){
+                    
+                    Estudiante estudiante = listaEstudiante.get(indice);
+                    bufferedWriter.write(estudiante.cedula+","+estudiante.nombreCompleto);
+                    bufferedWriter.write("\n");
+                }
+                bufferedWriter.close();
+                System.out.println("Estudiantes han sido guardado correctamente");
             }
         }
+    }
+    
+    public static void main(String[] args) throws IOException {
+
+        Main m = new Main();
+        m.ejecutarMenu();
 
     }
 }
