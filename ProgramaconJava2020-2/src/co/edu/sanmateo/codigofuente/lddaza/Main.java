@@ -35,11 +35,12 @@ public class Main {
        if(opcion == 0){
        System.out.println("Saliendo...");
        System.exit(0);
+       
        }else if(opcion == 1){
        Estudiante estudi = universidad.crearEstudiante();
        listaEstudiante.add(estudi);
            System.out.println("El estudiante"+ estudi.nombrecompleto+ " ha sido registrado correctamente");
-        }else if(opcion == 2){
+       }else if(opcion == 2){
         //1.inicializamos 
         //2.pregunta o condicion
         //3.incremento
@@ -50,10 +51,25 @@ public class Main {
                System.out.println(estudiante.cedula+"       "+estudiante.nombrecompleto);       
            }
     
+        }else if(opcion == 3){
+            System.out.println("Ingrese el número de documento que desea encontrar:");
+            String identidad = entrada.next();
+            for (int indice = 0; indice < listaEstudiante.size(); indice++) {
+             
+            Estudiante estudiante = listaEstudiante.get(indice);
+            if(estudiante.cedula.equals(identidad)){
+                System.out.println("El estudiante se ha encontrado..."+estudiante.nombrecompleto);
+            }
+            
+                
+            }
+            }     
+           }
+    
         }
         } 
-    }
+    
         
-  }
+  
    
 
