@@ -7,6 +7,9 @@ package co.edu.sanmateo.codigofuente.extrandres;
 
 import co.edu.sanmateo.codigofuente.extrandres.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.extrandres.operaciones.Universidad;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,7 +20,7 @@ import java.util.Scanner;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>();
@@ -33,6 +36,7 @@ public class Main {
             System.out.println("1. REGISTRAR ESTUDIANTE");
             System.out.println("2. LISTA ESTUDIANTES");
             System.out.println("3. BUSCAR ESTUDIANTE");
+            System.out.println("4. GUARDAR ESTUDIANTES");
             System.out.println("0. Salir");
             System.out.println("☆☆★★★★★★★★★★★★★★★★★★★★★★★★★★★☆☆");
             System.out.println("             INGRESAR OPCION");
@@ -73,6 +77,19 @@ public class Main {
                         
                     }
                 }
+            }else if(opcion == 4){
+                
+                FileWriter fileWriter = new FileWriter("C:\\Users\\lerman\\Documents\\estudiantes.txt", false);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                
+                for(int indice=0; indice < listaEstudiante.size(); indice ++ ){
+                    
+                    Estudiante estudiante = listaEstudiante.get(indice);
+                    bufferedWriter.write(estudiante.cedula+","+estudiante.nombreCompleto);
+                    bufferedWriter.write("\n");
+                }
+                bufferedWriter.close();
+                System.out.println("Estudiantes han sido guardado correctamente");
             }
 
         }
