@@ -12,6 +12,7 @@ package co.edu.sanmateo.codigofuente.YersonRomero;
 import co.edu.sanmateo.codigofuente.YersonRomero.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.YersonRomero.operaciones.Universidad;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,10 +21,22 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public Main() {
+        //Aqui se construye la clase de una instancia
+    }
+
+    public void ejecutarMenu() throws IOException {
 
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>(); //Creación de la lista
+
+        File fileLectura = new File("A:\\Software\\SanMateo\\FundamentosProgramacionJava\\estudiantes.txt"); //Creación de la clase File
+        Scanner leerArchivo = new Scanner(fileLectura); //Lectura del archivo
+        while (leerArchivo.hasNextLine()) {
+            String linea = leerArchivo.nextLine();
+            System.out.println("LINEA:" + linea);
+        }
+
         Universidad universidad = new Universidad();
 
         while (true) {
@@ -63,16 +76,16 @@ public class Main {
                 String identificacion;
                 identificacion = entrada.next();
                 for (int indice = 0; indice < listaEstudiante.size(); indice++) {
-                    Estudiante estudiante = listaEstudiante.get(indice); 
-                    if (estudiante.cedula.equals(identificacion)){
-                     System.out.println("Estudiante encontrado   "+ estudiante.nombreCompleto);   
+                    Estudiante estudiante = listaEstudiante.get(indice);
+                    if (estudiante.cedula.equals(identificacion)) {
+                        System.out.println("Estudiante encontrado   " + estudiante.nombreCompleto);
                     }
-                     System.out.println("Estudiante no encontrado   "+ estudiante.nombreCompleto);
-                } 
-            } else if (opcion == 4){
+                    System.out.println("Estudiante no encontrado   " + estudiante.nombreCompleto);
+                }
+            } else if (opcion == 4) {
                 FileWriter fileWriter = new FileWriter("A:\\Software\\SanMateo\\FundamentosProgramacionJava\\estudiantes.txt", false);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                
+
                 for (int indice = 0; indice < listaEstudiante.size(); indice++) {
                     Estudiante estudiante = listaEstudiante.get(indice);
                     bufferedWriter.write(estudiante.cedula + "," + estudiante.nombreCompleto);
@@ -80,7 +93,14 @@ public class Main {
                 }
                 bufferedWriter.close();
                 System.out.println("Se ha guardado correctamente la lista de los estudiantes");
-            } 
+            }
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        Main m = new Main();
+        m.ejecutarMenu();
+
     }
 }
