@@ -2,9 +2,11 @@ package co.edu.sanmateo.codigofuente.JesusBarbosa;
 
 import co.edu.sanmateo.codigofuente.JesusBarbosa.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.JesusBarbosa.operaciones.Universidad;
+import com.sun.scenario.DelayedRunnable;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -28,6 +30,7 @@ public class Main {
             System.out.println("2. Listar Estudiantes");
             System.out.println("3. Buscar estudiante (documento)");
             System.out.println("4. Guardar información de los estudiantes");
+            System.out.println("5. Leer datos guardados en la base");
             System.out.println("0. Salir");
             System.out.println("-----------------------");
             int opcion = entrada.nextInt();
@@ -54,6 +57,11 @@ public class Main {
                     System.out.println(estudiante.cedula + "                     " + estudiante.nombreCompleto);
                 }
                 System.out.println("----------------------------------------------------------");
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                }
             } else if (opcion == 3) {
                 System.out.println("Escriba la cedula del estudiante a buscar");
                 System.out.println("-------------------------");
@@ -72,7 +80,11 @@ public class Main {
                     System.out.println("El estudiante con documento " + docBuscar + " no existe en la lista");
                     System.out.println("------------------------------");
                 }
-
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                }
             } else if (opcion == 4) {
                 //System.out.println("");
                 FileWriter fw = new FileWriter("C:\\Users\\LuckRotz\\Documents\\NetBeansProjects\\Base\\estudiantes2.txt", false);
@@ -91,9 +103,20 @@ public class Main {
                 FileReader fr = new FileReader("C:\\Users\\LuckRotz\\Documents\\NetBeansProjects\\Base\\estudiantes2.txt");
                 BufferedReader br = new BufferedReader(fr);
                 String linea;
+                System.out.println("*---------*----------*---------*");
+                System.out.println("Los estudiantes son:");
+                System.out.println("*---------*----------*---------*");
                 while ((linea = br.readLine()) != null) {
                     System.out.println(linea);
                 }
+                System.out.println("*---------*----------*---------*");
+
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                }
+
             }
 
         }
