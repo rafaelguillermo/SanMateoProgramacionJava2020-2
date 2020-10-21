@@ -2,22 +2,31 @@ package co.edu.sanmateo.codigofuente.jclamprea;
 
 import co.edu.sanmateo.codigofuente.jclamprea.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.jclamprea.operaciones.Universidad;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author portatil
- */
 public class Main {
 
-    @SuppressWarnings("NestedAssignment")
-    public static void main(String[] args) {
+    public Main() {
+        System.out.println("Menu universidad");
+    }
+
+    public void ejecutarMenu() throws IOException {
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>();
         Universidad universidad = new Universidad();
-      
+        File fileLectura = new File("C:\\Users\\juanc\\Documents\\NetBeansProjects\\SanMateoProgramacionJava2020-2\\Base Estudiantes\\estudiantes.txt");
+        Scanner leerArchivo = new Scanner(fileLectura);
+        while (leerArchivo.hasNextLine()) {
+            String linea = leerArchivo.nextLine();
+            System.out.println("LINEA:" + linea);
+        }
+
         while (true) {
 
             System.out.println("Bienvenido a la Universidad San Juan");
@@ -48,24 +57,42 @@ public class Main {
                 System.out.println("----------------------------");
             } else if (opcion == 3) {
                 System.out.println("Digite la cedula del estudiante:");
-                String busqueda = entrada.nextLine();
-                
+                String busqueda;
+                busqueda = entrada.next();
+                System.out.println("Estudiante no encontrado");
+                System.out.println("-------------------------");
                 for (int i = 0; i < listaEstudiante.size(); i++) {
                     Estudiante estudiante = listaEstudiante.get(i);
-                    String aux = estudiante.cedula;
-                    if (aux == busqueda) {
-                        System.out.println("los datos del estudiante son:");
-                        System.out.println("documento" + estudiante.cedula + estudiante.nombrecompleto);
+
+                    if (estudiante.cedula.equals(busqueda)) {
+                        System.out.println("los datos del estudiante encontrado son:");
+                        System.out.println("\nDocumento" + " " + estudiante.cedula + " " + "Nombre : " + estudiante.nombrecompleto);
                         System.out.println("----------------------------");
+
                     }
                 }
-                System.out.println("no se encontró el estudiante");
-                System.out.println("----------------------------");
-            } else if (opcion == 4) {
-                System.out.println("aqui habrá un metodo para guardar");
-                System.out.println("----------------------------------");
 
+            } else if (opcion == 4) {
+                FileWriter escritura = new FileWriter("C:\\Users\\juanc\\Documents\\NetBeansProjects\\SanMateoProgramacionJava2020-2\\Base Estudiantes\\estudiantes.txt", false);
+                BufferedWriter bufered = new BufferedWriter(escritura);
+
+                for (int indice = 0; indice < listaEstudiante.size(); indice++) {
+
+                    Estudiante estudiante = listaEstudiante.get(indice);
+                    bufered.write(estudiante.cedula + "," + estudiante.nombrecompleto);
+                    bufered.write("\n");
+                }
+                escritura.close();
+                System.out.println("Los estudiantes han sido guardados correctamente.");
             }
         }
     }
+
+    public static void main(String[] args) throws IOException {
+
+        Main m = new Main();
+        m.ejecutarMenu();
+
+    }
 }
+
