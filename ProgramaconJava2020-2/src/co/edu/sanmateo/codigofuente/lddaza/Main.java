@@ -10,13 +10,17 @@ import java.util.List;
 import java.util.Scanner;
 import co.edu.sanmateo.codigofuente.lddaza.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.lddaza.operaciones.Universidad;
+import com.sun.corba.se.impl.encoding.BufferManagerWrite;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 /**
  *
  * @author Admin
  */
 public class Main {
-   public static void main(String[] args) {
+   public static void main(String[] args) throws IOException {
       
        
        Scanner entrada = new Scanner(System.in);
@@ -30,6 +34,7 @@ public class Main {
        System.out.println("1.Registrar Estudiante");
        System.out.println("2.Listar estudiantes");
        System.out.println("3.Buscar estudiante");
+       System.out.println("4. Guardar info de estudiantes");
        System.out.println("0. Salir");
        int opcion=entrada.nextInt();
        if(opcion == 0){
@@ -60,9 +65,18 @@ public class Main {
             if(estudiante.cedula.equals(identidad)){
                 System.out.println("El estudiante se ha encontrado..."+estudiante.nombrecompleto);
             }
-            
-                
+               
             }
+        }else if (opcion == 4){
+            FileWriter filew = new FileWriter("C:\\Users\\Admin\\Desktop\\Universidad\\estudiantesSM.txt");
+            BufferedWriter writer = new BufferedWriter(filew);
+            
+            for (int indice=0; indice< listaEstudiante.size(); indice++) {
+                
+               Estudiante estudiante = listaEstudiante.get(indice);
+               writer.write(estudiante.cedula+";"+estudiante.nombrecompleto);    
+           }
+            filew.close();
             }     
            }
     
