@@ -11,16 +11,19 @@ package co.edu.sanmateo.codigofuente.YersonRomero;
 
 import co.edu.sanmateo.codigofuente.YersonRomero.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.YersonRomero.operaciones.Universidad;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner entrada = new Scanner(System.in);
-        List<Estudiante> listaEstudiante = new ArrayList<>(); //Creación de lista
+        List<Estudiante> listaEstudiante = new ArrayList<>(); //Creación de la lista
         Universidad universidad = new Universidad();
 
         while (true) {
@@ -30,6 +33,7 @@ public class Main {
             System.out.println("|1. Registrar Estudiante                           |");
             System.out.println("|2. Listar Estudiantes                             |");
             System.out.println("|3. Buscar Estudiante en la Lista                  |");
+            System.out.println("|4. Guardar la información de los Estudiantes      |");
             System.out.println("|0. Salir                                          |");
             System.out.println("|--------------------------------------------------|");
 
@@ -64,8 +68,19 @@ public class Main {
                      System.out.println("Estudiante encontrado   "+ estudiante.nombreCompleto);   
                     }
                      System.out.println("Estudiante no encontrado   "+ estudiante.nombreCompleto);
+                } 
+            } else if (opcion == 4){
+                FileWriter fileWriter = new FileWriter("A:\\Software\\SanMateo\\FundamentosProgramacionJava\\estudiantes.txt", false);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                
+                for (int indice = 0; indice < listaEstudiante.size(); indice++) {
+                    Estudiante estudiante = listaEstudiante.get(indice);
+                    bufferedWriter.write(estudiante.cedula + "," + estudiante.nombreCompleto);
+                    bufferedWriter.write("\n");
                 }
-            }
+                bufferedWriter.close();
+                System.out.println("Se ha guardado correctamente la lista de los estudiantes");
+            } 
         }
     }
 }
