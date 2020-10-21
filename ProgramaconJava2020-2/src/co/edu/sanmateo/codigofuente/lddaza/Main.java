@@ -22,11 +22,14 @@ public class Main {
        Scanner entrada = new Scanner(System.in);
        List<Estudiante> listaEstudiante = new ArrayList<>();
        Universidad universidad= new Universidad();
-       
-       System.out.println("BIENVENIDOS A LA UNIVERSIDAD SAN MATEO");
+    
+       while (true) {           
+           System.out.println("BIENVENIDOS A LA UNIVERSIDAD SAN MATEO");
     
        System.out.println("------Menú------");
        System.out.println("1.Registrar Estudiante");
+       System.out.println("2.Listar estudiantes");
+       System.out.println("3.Buscar estudiante");
        System.out.println("0. Salir");
        int opcion=entrada.nextInt();
        if(opcion == 0){
@@ -35,8 +38,22 @@ public class Main {
        }else if(opcion == 1){
        Estudiante estudi = universidad.crearEstudiante();
        listaEstudiante.add(estudi);
-           System.out.println("El estudiante"+ estudi.nombrecompleto+ "ha sido registrado correctamente");
-   }
-        
+           System.out.println("El estudiante"+ estudi.nombrecompleto+ " ha sido registrado correctamente");
+        }else if(opcion == 2){
+        //1.inicializamos 
+        //2.pregunta o condicion
+        //3.incremento
+           System.out.println("IDENTIFICACIÓN      NOMBRE COMPLETO"); 
+           System.out.println("-------------------------------------------"); 
+           for (int indice=0; indice< listaEstudiante.size(); indice++) {
+               Estudiante estudiante = listaEstudiante.get(indice);
+               System.out.println(estudiante.cedula+"       "+estudiante.nombrecompleto);       
+           }
+    
+        }
+        } 
     }
-}
+        
+  }
+   
+
