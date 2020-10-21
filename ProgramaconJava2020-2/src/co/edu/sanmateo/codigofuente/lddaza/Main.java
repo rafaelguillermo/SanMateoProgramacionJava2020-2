@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 import co.edu.sanmateo.codigofuente.lddaza.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.lddaza.operaciones.Universidad;
-import com.sun.corba.se.impl.encoding.BufferManagerWrite;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -68,15 +68,17 @@ public class Main {
                
             }
         }else if (opcion == 4){
-            FileWriter filew = new FileWriter("C:\\Users\\Admin\\Desktop\\Universidad\\estudiantesSM.txt");
+            FileWriter filew = new FileWriter("C:\\Users\\Admin\\Desktop\\Universidad\\estudiantesSM.txt",true);
             BufferedWriter writer = new BufferedWriter(filew);
             
             for (int indice=0; indice< listaEstudiante.size(); indice++) {
                 
                Estudiante estudiante = listaEstudiante.get(indice);
-               writer.write(estudiante.cedula+";"+estudiante.nombrecompleto);    
+               writer.write(estudiante.cedula+";"+estudiante.nombrecompleto);
+               writer.write("\n");
            }
-            filew.close();
+            writer.close();
+            System.out.println("La información ha sido almacenada correctamente");
             }     
            }
     
