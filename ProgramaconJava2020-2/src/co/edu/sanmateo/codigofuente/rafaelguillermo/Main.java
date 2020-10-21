@@ -3,6 +3,7 @@ package co.edu.sanmateo.codigofuente.rafaelguillermo;
 import co.edu.sanmateo.codigofuente.rafaelguillermo.modelo.Estudiante;
 import co.edu.sanmateo.codigofuente.rafaelguillermo.operaciones.Universidad;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,6 +24,14 @@ public class Main {
         
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>();
+        
+        File fileLectura = new File("F:\\r\\software\\docs\\j\\cursos\\Java SE 8 Programming\\Java SE 8 Programming\\estudiantes2.txt");
+        
+        Scanner leerArchivo = new Scanner(fileLectura);
+        while( leerArchivo.hasNextLine() ){
+            String linea = leerArchivo.nextLine();
+            System.out.println("LINEA:"+ linea );
+        }
         
         Universidad universidad = new Universidad();
 
