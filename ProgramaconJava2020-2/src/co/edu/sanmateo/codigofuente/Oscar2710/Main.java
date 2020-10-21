@@ -18,6 +18,7 @@ public class Main {
             System.out.println("Bienvenido a la Universidad San Mateo");
             System.out.println("-------- MENU ------------");
             System.out.println("1. Registro Estudiante");
+            System.out.println("2. Listar Estudiantes");
             System.out.println("0. Salir");
             int opcion = entrada.nextInt();
             if (opcion == 0) {
@@ -27,6 +28,24 @@ public class Main {
                 Estudiante estu = universidad.crearEstudiante();
                 listaEstudiante.add(estu);
                 System.out.println("El estudiante: " + estu.nombreCompleto + " ha sido ingresado a la universidad");
+            } else if (opcion == 2) {
+                //inicializacion
+                //pregunta
+                //incremento
+                
+                System.out.println("ESTUDIANTES A MOSTRAR: "+ listaEstudiante.size());
+                System.out.println("DOCUMENTO        NOMBRE COMPLETO");
+                System.out.println("-------------------------------");
+                
+                for(int indice=0; indice < listaEstudiante.size(); indice++){
+                    
+                    Estudiante estudiante = listaEstudiante.get(indice);
+                    System.out.println("-------------------------------");
+                    
+                    
+                    listaEstudiante.get(indice);
+                    
+                }
             }
         }
 
