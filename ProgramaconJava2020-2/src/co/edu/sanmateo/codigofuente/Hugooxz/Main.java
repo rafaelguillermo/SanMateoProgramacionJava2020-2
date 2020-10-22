@@ -77,7 +77,7 @@ public class Main {
 
             } else if (opcion == 4) {
                 //System.out.println("");
-                FileWriter fw = new FileWriter("C:\\Users\\LuckRotz\\Documents\\NetBeansProjects\\Base\\estudiantes2.txt", false);
+                FileWriter fw = new FileWriter("C:\\Users\\Administrador\\Documents\\NetBeansProjects\\Base\\estudiantes2.txt", false);
                 BufferedWriter bw = new BufferedWriter(fw);
 
                 for (int indice = 0; indice < listaEstudiante.size(); indice++) {
@@ -90,7 +90,7 @@ public class Main {
                 System.out.println("Los estudiantes han sido guardados correctamente.");
 
             } else if (opcion == 5) {
-                FileReader fr = new FileReader("C:\\Users\\LuckRotz\\Documents\\NetBeansProjects\\Base\\estudiantes2.txt");
+                FileReader fr = new FileReader("C:\\Users\\Administrador\\Documents\\NetBeansProjects\\Base\\estudiantes2.txt");
                 BufferedReader br = new BufferedReader(fr);
                 String linea;
                 while ((linea = br.readLine()) != null) {
