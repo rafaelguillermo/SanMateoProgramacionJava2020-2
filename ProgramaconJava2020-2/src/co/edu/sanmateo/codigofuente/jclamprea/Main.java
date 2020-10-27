@@ -19,22 +19,29 @@ public class Main {
     public void ejecutarMenu() throws IOException {
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>();
-        Universidad universidad = new Universidad();
+        
         File fileLectura = new File("C:\\Users\\juanc\\Documents\\NetBeansProjects\\SanMateoProgramacionJava2020-2\\Base Estudiantes\\estudiantes.txt");
         Scanner leerArchivo = new Scanner(fileLectura);
         while (leerArchivo.hasNextLine()) {
             String linea = leerArchivo.nextLine();
             System.out.println("LINEA:" + linea);
+            
+            String arreglo [] = linea.split(",");
+            Estudiante estudiante = new Estudiante(arreglo[1], arreglo[0]);
+            listaEstudiante.add(estudiante);
         }
-
+        Universidad universidad = new Universidad(); 
         while (true) {
-
+            
+               
+            
             System.out.println("Bienvenido a la Universidad San Juan");
             System.out.println("Menu Principal");
             System.out.println("1 Regstrar un estudiante");
             System.out.println("2 Lista de estudiantes");
             System.out.println("3 Buscar un estudiante");
             System.out.println("4 Guardar datos de los estudiantes");
+            System.out.println("5 Eliminar los datos de un estudiante");
             System.out.println("0 para salir del menu");
             int opcion = entrada.nextInt();
 
@@ -82,8 +89,19 @@ public class Main {
                     bufered.write(estudiante.cedula + "," + estudiante.nombrecompleto);
                     bufered.write("\n");
                 }
-                escritura.close();
+                bufered.close();
                 System.out.println("Los estudiantes han sido guardados correctamente.");
+            }else if (opcion == 5){
+                
+            Estudiante estudianteBuscado = universidad.buscarEstudiante(entrada, listaEstudiante);
+                if( estudianteBuscado != null){
+                    listaEstudiante.remove(estudianteBuscado);
+                    System.out.println("Se ha eliminado al estudiante: "+estudianteBuscado.nombrecompleto);
+                }else{
+                    System.out.println("lo siento, NO PUEDO ELIMINAR UN ESTUDIANTE QUE NO EXISTE");
+                }
+            
+            
             }
         }
     }
