@@ -31,6 +31,11 @@ public class Main {
         while( leerArchivo.hasNextLine() ){
             String linea = leerArchivo.nextLine();
             System.out.println("LINEA:"+ linea );
+            
+            String arreglo[] = linea.split(",");
+            
+            Estudiante estudiante = new Estudiante(arreglo[1], arreglo[0]);
+            listaEstudiante.add(estudiante);
         }
         
         Universidad universidad = new Universidad();
@@ -43,6 +48,7 @@ public class Main {
             System.out.println("2. Listar Estudiantes");
             System.out.println("3. Buscar Estudiante en la lista");
             System.out.println("4. Guardar informacion de los estudiantes");
+            System.out.println("5. Eliminar un estudiante");
             System.out.println("0. Salir");
             
             int opcion = entrada.nextInt();
@@ -68,19 +74,14 @@ public class Main {
                     System.out.println(estudiante.cedula+"      "+estudiante.nombreCompleto);
                 }
             }else if(opcion == 3){
-                System.out.println("Por ingrese la identificación a buscar: ");
-                String identificacion;
-                identificacion = entrada.next();
                 
-                for(int indice=0; indice < listaEstudiante.size(); indice ++ ){
-                    
-                    Estudiante estudiante = listaEstudiante.get(indice);
-                    
-                    if(estudiante.cedula.equals(identificacion)){
-                        System.out.println("ESTUDIANTE ENCONTRADO..."+estudiante.nombreCompleto);
-                    }
-                    //System.out.println(estudiante.cedula+"      "+estudiante.nombreCompleto);
+                Estudiante estudianteBuscado = universidad.buscarEstudiante(entrada, listaEstudiante);
+                if( estudianteBuscado != null){
+                    System.out.println("ESTUDIANTE ENCONTRADO..."+estudianteBuscado.nombreCompleto);
+                }else{
+                    System.out.println("lo siento, el estudiante buscado no fue encontrado");
                 }
+                
             }else if(opcion == 4){
                 ///System.out.println("");
                 FileWriter fileWriter = new FileWriter("F:\\r\\software\\docs\\j\\cursos\\Java SE 8 Programming\\Java SE 8 Programming\\estudiantes2.txt", false);
@@ -94,6 +95,17 @@ public class Main {
                 }
                 bufferedWriter.close();
                 System.out.println("Estudiantes han sido guardado correctamente");
+                
+            }else if( opcion == 5){
+                
+                Estudiante estudianteBuscado = universidad.buscarEstudiante(entrada, listaEstudiante);
+                if( estudianteBuscado != null){
+                    listaEstudiante.remove(estudianteBuscado);
+                    System.out.println("Se ha eliminado al estudiante: "+estudianteBuscado.nombreCompleto);
+                }else{
+                    System.out.println("lo siento, NO PUEDO ELIMINAR UN ESTUDIANTE QUE NO EXISTE");
+                }
+                
             }
         }
     }
