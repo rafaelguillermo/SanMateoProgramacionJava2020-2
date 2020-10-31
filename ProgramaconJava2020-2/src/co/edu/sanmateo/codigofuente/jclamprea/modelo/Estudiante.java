@@ -14,7 +14,7 @@ public class Estudiante {
     public String cedula;
 
     public Estudiante(String nombrecompleto, String cedula) {
-        this.nombrecompleto = nombrecompleto;
+        this.nombrecompleto = nombrecompleto.toUpperCase();
         this.cedula = cedula;
     }
         

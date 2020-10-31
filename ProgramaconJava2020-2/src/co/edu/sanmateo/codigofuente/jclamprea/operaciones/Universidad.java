@@ -19,7 +19,7 @@ public class Universidad {
     }
     public Estudiante buscarEstudiante(Scanner entrada, List<Estudiante> listaEstudiante){
         
-        System.out.println("Por ingrese la identificación a buscar: ");
+        System.out.println("Por favor ingrese el número de identificación: ");
         String identificacion;
         identificacion = entrada.next();
 

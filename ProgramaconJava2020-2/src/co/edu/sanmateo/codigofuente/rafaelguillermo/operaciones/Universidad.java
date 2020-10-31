@@ -21,9 +21,8 @@ public class Universidad {
 
         for(int indice=0; indice < listaEstudiante.size(); indice ++ ){
 
-            Estudiante estudiante = listaEstudiante.get(indice);
-
-            if(estudiante.cedula.equals(identificacion)){
+        Estudiante estudiante = listaEstudiante.get(indice);
+        if(estudiante.cedula.equals(identificacion)){
                 return estudiante;
             }
             //System.out.println(estudiante.cedula+"      "+estudiante.nombreCompleto);
@@ -31,20 +30,23 @@ public class Universidad {
         return null;
     }
     
+    
     public Estudiante crearEstudiante(){
         
+             
         Scanner entrada = new Scanner(System.in);
         System.out.println("--------------------------------");
         System.out.println("Ingresando un nuevo estudiante");
         System.out.println("Nombre completo del estudiante");
-        String nombre = entrada.nextLine();
-        
+       String nombre = entrada.nextLine();
+                      
         System.out.println("Cedula del estudiante");
         String cedula = entrada.nextLine();
         
         Estudiante estudiante = new Estudiante(nombre, cedula);
         System.out.println("--------------------------------");
-        
+          
         return estudiante;
-    }
+        }
+
 }
