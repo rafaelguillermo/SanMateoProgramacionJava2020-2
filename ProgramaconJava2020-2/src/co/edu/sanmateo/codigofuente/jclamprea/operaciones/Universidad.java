@@ -14,15 +14,15 @@ import java.util.Scanner;
  * @author portatil
  */
 public class Universidad {
-
+String Aux;
     public Universidad() {
+       
     }
     public Estudiante buscarEstudiante(Scanner entrada, List<Estudiante> listaEstudiante){
         
         System.out.println("Por favor ingrese el número de identificación: ");
-        String identificacion;
-        identificacion = entrada.next();
-
+        String identificacion = entrada.next();
+        Aux = identificacion;
         for(int indice=0; indice < listaEstudiante.size(); indice ++ ){
 
             Estudiante estudiante = listaEstudiante.get(indice);
@@ -36,15 +36,13 @@ public class Universidad {
     }
     
     public Estudiante crearEstudiante(){
-        
         Scanner entrada = new Scanner (System.in);
         System.out.println("--------------------------");
         System.out.println("Ingresando un nuevo estudiante");        
         System.out.println("Digite el nombre completo del estudiante:");  
         String nombre = entrada.nextLine();
         
-        System.out.println("Digite la cedula del estudiante:");  
-        String cedula = entrada.nextLine();
+        String cedula = Aux;
         
         Estudiante estudiante = new Estudiante(nombre,cedula);
         System.out.println("----------------------------");

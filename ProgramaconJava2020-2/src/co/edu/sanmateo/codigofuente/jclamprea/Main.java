@@ -52,7 +52,6 @@ public class Main {
                 if (busqueda != null) {
                     System.out.println("El estudiante ya existe: " + busqueda.nombrecompleto);
                 } else {
-
                     Estudiante nuevo = universidad.crearEstudiante();
                     listaEstudiante.add(nuevo);
                     System.out.println("Se ha creado el estudiante " + nuevo.nombrecompleto + " correctamente");
@@ -101,18 +100,20 @@ public class Main {
                 Estudiante estudianteBuscado = universidad.buscarEstudiante(entrada, listaEstudiante);
                 if (estudianteBuscado != null) {
                     listaEstudiante.remove(estudianteBuscado);
-                    System.out.println("Se ha eliminado al estudiante: " + estudianteBuscado.nombrecompleto);
+                    System.out.println("Se ha eliminado al estudiante: " + estudianteBuscado.nombrecompleto +" Seleccione 4 para guardar los cambios");
                 } else {
                     System.out.println("LO SIENTO, NO PUEDO ELIMINAR UN ESTUDIANTE QUE NO EXISTE");
                 }
             } else if (opcion == 6) {
-
+                System.out.println("El sistema solo permite editar el nombre del estudiante");
+                System.out.println("Para cambiar la cedula se debe eliminar el registro opción 5");
+                System.out.println("y crearlo nuevamente con los datos correctos opción 1");
                 Estudiante estudianteBuscado = universidad.buscarEstudiante(entrada, listaEstudiante);
                 if (estudianteBuscado != null) {
                     Estudiante nuevo = universidad.crearEstudiante();
                     listaEstudiante.remove(estudianteBuscado);
                     listaEstudiante.add(nuevo);
-                    System.out.println("Se ha modificado el estudiante" + nuevo.nombrecompleto + " correctamente");
+                    System.out.println("Se ha modificado el estudiante " + nuevo.nombrecompleto + " correctamente seleccione 4 para guardar los cambios");
                     System.out.println("");
                 } else {
                     System.out.println("LO SIENTO, NO PUEDO MODIFICAR UN ESTUDIANTE QUE NO EXISTE");
