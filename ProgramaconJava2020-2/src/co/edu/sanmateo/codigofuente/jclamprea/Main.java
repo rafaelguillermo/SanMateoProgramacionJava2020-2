@@ -54,7 +54,7 @@ public class Main {
                 } else {
                     Estudiante nuevo = universidad.crearEstudiante();
                     listaEstudiante.add(nuevo);
-                    System.out.println("Se ha creado el estudiante " + nuevo.nombrecompleto + " correctamente");
+                    System.out.println("Se ha creado el estudiante " + nuevo.nombrecompleto + " Seleccione 4 para guardar los cambios");
                     System.out.println("");
                 }
                 }else if (opcion == 2) {
