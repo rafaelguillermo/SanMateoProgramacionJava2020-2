@@ -30,6 +30,7 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
         List<Estudiante> listaEstudiante = new ArrayList<>();
+        
         Universidad universidad = new Universidad();
 
         while (true) {
@@ -43,6 +44,7 @@ public class Main {
             System.out.println("3.Buscar estudiante");
             System.out.println("4. Guardar info de estudiantes");
             System.out.println("5. Importar info de estudiante");
+            System.out.println("6. Modificar info de estudiante");
             System.out.println("0. Salir");
             System.out.println("-----");
             int opcion = entrada.nextInt();
@@ -54,7 +56,7 @@ public class Main {
             } else if (opcion == 1) {
                 Estudiante estudi = universidad.crearEstudiante();
                 listaEstudiante.add(estudi);
-                System.out.println("El estudiante" + estudi.nombrecompleto + " ha sido registrado correctamente");
+                System.out.println("El estudiante: " + estudi.nombrecompleto.toUpperCase() + " ha sido registrado correctamente");
             } else if (opcion == 2) {
                 //1.inicializamos 
                 //2.pregunta o condicion
@@ -64,7 +66,7 @@ public class Main {
                 System.out.println("-------------------------------------");
                 for (int indice = 0; indice < listaEstudiante.size(); indice++) {
                     Estudiante estudiante = listaEstudiante.get(indice);
-                    System.out.println(estudiante.cedula + "       " + estudiante.nombrecompleto);
+                    System.out.println(estudiante.cedula + "       " + estudiante.nombrecompleto.toUpperCase());
                 }
 
             } else if (opcion == 3) {
@@ -75,7 +77,7 @@ public class Main {
                     Estudiante estudiante = listaEstudiante.get(indice);
                     if (estudiante.cedula.equals(identidad)) {
                         System.out.println("------------------------------------");
-                        System.out.println("Los datos corresponden al estudiante: " + estudiante.nombrecompleto);
+                        System.out.println("Los datos corresponden al estudiante: " + estudiante.nombrecompleto.toUpperCase());
                         System.out.println("------------------------------------");
                     }
 
@@ -87,7 +89,7 @@ public class Main {
                 for (int indice = 0; indice < listaEstudiante.size(); indice++) {
 
                     Estudiante estudiante = listaEstudiante.get(indice);
-                    writer.write("CÉDULA: " + estudiante.cedula + "       " + "NOMBRE DEL ESTUDIANTE: " + estudiante.nombrecompleto);
+                    writer.write("CÉDULA: " + estudiante.cedula + "       " + "NOMBRE DEL ESTUDIANTE: " + estudiante.nombrecompleto.toUpperCase());
                     writer.write("\n");
                 }
                 writer.close();
@@ -99,7 +101,7 @@ public class Main {
 
                 try {
                     // Apertura del fichero y creacion de BufferedReader para poder
-                    // hacer una lectura comoda (disponer del metodo readLine()).
+                    // hacer la lectura del archivo estudiantesSM y visualizarlo en el programa
                     File DBSanMateo = new File("C:\\Users\\Admin\\Desktop\\Universidad\\estudiantesSM.txt");
                     FileReader fr = new FileReader(DBSanMateo);
                     BufferedReader br = new BufferedReader(fr);
@@ -110,6 +112,12 @@ public class Main {
 
                         System.out.println(linea);
                         System.out.println("-------------------------");
+                        
+                        String arreglo[] = linea.split(",");
+                        Estudiante estu= new Estudiante(arreglo[1], arreglo[0]);
+                        listaEstudiante.add(estu);
+
+                        
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
