@@ -31,8 +31,4 @@ public class Estudiante {
         return identification;
     }
 
-    public void setIdentification(String identification) {
-        this.identification = identification;
-    }
-
 }

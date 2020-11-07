@@ -53,6 +53,8 @@ public class Main {
                     + "2- Listar estudiantes\n"
                     + "3- Buscar estudiantes en la lista\n"
                     + "4- Guardar estudiantes\n"
+                    + "5- Borrar estudiante\n"
+                    + "6- Editar nombre de estudiante\n"
                     + "0- Salir\n");
             int option = input.nextInt();
             if (option == 0) {
@@ -60,8 +62,13 @@ public class Main {
                 System.exit(0);
             } else if (option == 1) {
                 Estudiante newStudent = university.newStudent();
-                listEstudents.add(newStudent);
-                System.out.println("\nEl estudiante " + newStudent.name + " ha sido registrado\n");
+                Boolean valido = university.validarCedula(listEstudents, newStudent.identification);
+                if (valido == true) {
+                    listEstudents.add(newStudent);
+                    System.out.println("\nEl estudiante " + newStudent.name + " ha sido registrado\n");
+                } else {
+                    System.out.println("\nEl estudiante " + newStudent.identification + " ya estaba registrado\n");
+                }
             } else if (option == 2) {
                 System.out.println("ESTUDIANTES A MOSTRAR " + listEstudents.size());
                 for (int i = 0; i < listEstudents.size(); i++) {
@@ -80,7 +87,6 @@ public class Main {
                         i = listEstudents.size();
                     }
                 }
-
                 if (search == true) {
                     System.out.println("Estudiante identificado con " + identificactionSearch + " ha sido encontrado: " + newStudent.name + "\n");
                 } else {
@@ -98,6 +104,36 @@ public class Main {
                     file.close();
                 } catch (Exception e) {
                     System.out.println("\nLa ubicación es erronea: " + e);
+                }
+            } else if (option == 5) {
+                System.out.println("Ingresar el numero de indentificación a buscar:\n");
+                String identificactionSearch = input.next();
+                boolean search = false;
+                Estudiante newStudent = null;
+                for (int i = 0; i < listEstudents.size(); i++) {
+                    newStudent = listEstudents.get(i);
+                    if (newStudent.identification.equals(identificactionSearch)) {
+                        System.out.println("Estudiante identificado con " + identificactionSearch + " nombre: " + newStudent.name + " ha sido borrado\n");
+                        listEstudents.remove(newStudent);
+                        search = true;
+                        break;
+                    }
+                }
+                if (search == false) {
+                    System.out.println("Estudiante identificado con " + identificactionSearch + " no ha sido encontrado\n");
+                }
+            } else if (option == 6) {
+                Scanner entrada = new Scanner(System.in);
+                System.out.println("\n¿Cuál es la cedula del estudiante a cambiar nombre?\n");
+                String cedula = entrada.nextLine();
+                Boolean search = university.validarCedula(listEstudents, cedula);
+                if (search == false) {
+                    System.out.println("\n¿Cuál es el nuevo nombre?\n");
+                    String nombre = entrada.nextLine();
+                    university.editarNOmbre(listEstudents, cedula, nombre);
+                    System.out.println("\nEl estudiante identificado con " + cedula + " ha sido actualizado");
+                } else {
+                    System.out.println("\nEl estudiante identificado con " + cedula + " no existe");
                 }
             }
         }
