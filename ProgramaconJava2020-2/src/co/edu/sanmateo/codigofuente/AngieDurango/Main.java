@@ -27,10 +27,9 @@ public class Main {
             System.out.println("1.Registrar Estudiante");
             System.out.println("2.Listar Estudiantes");
             System.out.println("3.Buscar Estudiante en la lista");
-            System.out.println("4.Alamacenar información de los estudiantes");
+            System.out.println("4.Almacenar información de los estudiantes");
             System.out.println("0. Salir");
-            
-            
+
             int opcion = entrada.nextInt();
             if (opcion == 0) {
                 System.out.println("Saliendo.....");
@@ -87,11 +86,24 @@ public class Main {
                 bufferedWriter.close();
                 System.out.println("Los estudiantes han sido almacenados exitosamente");
 
+            } else if (opcion == 6) {
+                System.out.println("Por favor ingrese la identificación a buscar:");
             }
-        }
+            String Identificacion;
+            Identificacion = entrada.next();
+            
+            String Nombre;
+            Nombre=entrada.next();
+                 
+           
+               
 
-    }
+           
+                
+            
 
+    
+        }}
     public static void main(String[] args) throws IOException {
 
         Main m = new Main();
