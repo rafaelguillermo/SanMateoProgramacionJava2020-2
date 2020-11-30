@@ -11,11 +11,24 @@ package co.edu.sanmateo.codigofuente.dgaitan861.modelo;
  */
 public class Estudiante {
 
-    public String nombreCompleto;
-    public String cedula;
-    public Estudiante(String nombreCompleto, String cedula){
-    this.nombreCompleto = nombreCompleto;
-    this.cedula = cedula;
+    public String name;
+    public String identification;
+
+    public Estudiante(String name, String identification) {
+        this.name = name;
+        this.identification = identification;
     }
-    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getIdentification() {
+        return identification;
+    }
+
 }
